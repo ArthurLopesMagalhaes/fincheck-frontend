@@ -13,7 +13,7 @@ export function AuthLayout() {
         </div>
       </div>
 
-      <div className="w-1/2 max-h-screen relative overflow-hidden rounded-b-[32px] flex-col justify-center items-center hidden lg:flex">
+      <div className="w-1/2 max-h-screen relative overflow-hidden rounded-[32px] flex-col justify-center items-center hidden lg:flex">
         <img src={illustration} className="object-fit select-none" />
 
         <div className="p-10 rounded-b-[32px] absolute bottom-0 bg-white">
