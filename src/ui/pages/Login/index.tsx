@@ -27,7 +27,7 @@ export function Login() {
 
       <form onSubmit={handleSubmit} className="flex flex-col mt-[60px] gap-4">
         <Input
-          type="email"
+          type="text"
           placeholder="E-mail"
           {...register("email")}
           error={errors.email?.message}
