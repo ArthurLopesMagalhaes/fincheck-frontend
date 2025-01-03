@@ -24,7 +24,7 @@ export function Accounts() {
   } = useAccountsController();
 
   return (
-    <div className="w-1/2 h-full bg-teal-900 rounded-2xl md:p-10 px-4 py-8 flex flex-col">
+    <div className="w-full md:w-1/2 h-full bg-teal-900 rounded-2xl md:p-10 px-4 py-8 flex flex-col">
       {isLoading && (
         <div className="w-full h-full flex items-center justify-center">
           <p>loading</p>
