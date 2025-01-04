@@ -14,6 +14,7 @@ import { SliderOption } from "./SliderOption";
 import { useTransactionsController } from "./useTransactionsController";
 import { Spinner } from "../../../../components/Components";
 import { TransactionTypeDropdown } from "./TransactionTypeDropdown";
+import { FiltersModal } from "./FiltersModal";
 
 export function Transactions() {
   const {
@@ -22,7 +23,8 @@ export function Transactions() {
     transactions,
     isLoading,
     handleOpenFiltersModal,
-
+    handleCloseFiltersModal,
+    isFiltersModalOpen,
     handleChangeFilters,
     filters,
 
@@ -41,6 +43,11 @@ export function Transactions() {
 
       {!isInitialLoading && (
         <>
+          <FiltersModal
+            open={isFiltersModalOpen}
+            onClose={handleCloseFiltersModal}
+            onApplyFilters={() => null}
+          />
           <header>
             <div className="flex items-center justify-between">
               <TransactionTypeDropdown />
