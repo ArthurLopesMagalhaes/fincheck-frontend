@@ -3,6 +3,7 @@ import { MONTHS } from "../../../../../app/config/constants";
 import { cn } from "../../../../../app/utils/cn";
 import { formatCurrency } from "../../../../../app/utils/formatCurrency";
 import { formatDate } from "../../../../../app/utils/formatDate";
+import emptyStateImg from "../../../../../assets/empty-state.svg";
 
 import { FilterIcon } from "../../../../components/icons/FilterIcon";
 import { CategoryIcon } from "../../../../components/icons/categories/CategoryIcon";
@@ -30,10 +31,10 @@ export function Transactions() {
   const hasTransactions = transactions.length > 0;
 
   return (
-    <div className="bg-gray-100 rounded-2xl w-full md:w-1/2 h-full p-10 flex flex-col">
+    <div className="bg-gray-100 rounded-2xl w-full md:w-1/2 h-full p-10 flex flex-col overflow-hidden">
       {isInitialLoading && (
         <div className="w-full h-full flex items-center justify-center">
-          <Spinner />
+          <Spinner className="h-2 w-2" />
         </div>
       )}
 
@@ -75,12 +76,13 @@ export function Transactions() {
           <div className="mt-4 space-y-2 flex-1 overflow-y-auto">
             {isLoading && (
               <div className="flex flex-col items-center justify-center h-full">
-                <Spinner className="w-10 h-10" />
+                <Spinner />
               </div>
             )}
 
             {!hasTransactions && !isLoading && (
               <div className="flex flex-col items-center justify-center h-full">
+                <img src={emptyStateImg} />
                 <p className="text-gray-700">
                   Não encontramos nenhuma transação!
                 </p>

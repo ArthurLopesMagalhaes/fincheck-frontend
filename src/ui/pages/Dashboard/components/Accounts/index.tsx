@@ -9,6 +9,7 @@ import { EyeIcon } from "../../../../components/icons/EyeIcon";
 import { AccountCard } from "./AccountCard";
 import { SliderNavigation } from "./SliderNavigation";
 import { useAccountsController } from "./useAccountsController";
+import { Spinner } from "../../../../components/Components";
 
 export function Accounts() {
   const {
@@ -27,7 +28,7 @@ export function Accounts() {
     <div className="w-full md:w-1/2 h-full bg-teal-900 rounded-2xl md:p-10 px-4 py-8 flex flex-col">
       {isLoading && (
         <div className="w-full h-full flex items-center justify-center">
-          <p>loading</p>
+          <Spinner className="text-teal-950/50 fill-white" />
         </div>
       )}
 

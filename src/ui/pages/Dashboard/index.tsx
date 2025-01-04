@@ -5,6 +5,7 @@ import { UserMenu } from "../../components/UserMenu";
 import { SplashScreen } from "../../SplashScreen";
 import { Accounts } from "./components/Accounts";
 import { Transactions } from "./components/Transactions";
+import { DashboardProvider } from "./DashboardContext";
 
 export function Dashboard() {
   const { isFetching } = useAuth();
@@ -19,9 +20,11 @@ export function Dashboard() {
         <Logo className="h-6 text-teal-900" />
         <UserMenu />
       </header>
-      <main className="flex-1 flex gap-4 flex-col md:flex-row">
-        <Accounts />
-        <Transactions />
+      <main className="flex-1 flex gap-4 flex-col md:flex-row h-full">
+        <DashboardProvider>
+          <Accounts />
+          <Transactions />
+        </DashboardProvider>
       </main>
     </div>
   );
