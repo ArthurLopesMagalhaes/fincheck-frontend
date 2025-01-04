@@ -13,6 +13,7 @@ import { SliderOption } from "./SliderOption";
 
 import { useTransactionsController } from "./useTransactionsController";
 import { Spinner } from "../../../../components/Components";
+import { TransactionTypeDropdown } from "./TransactionTypeDropdown";
 
 export function Transactions() {
   const {
@@ -42,6 +43,7 @@ export function Transactions() {
         <>
           <header>
             <div className="flex items-center justify-between">
+              <TransactionTypeDropdown />
               <button onClick={handleOpenFiltersModal}>
                 <FilterIcon />
               </button>
