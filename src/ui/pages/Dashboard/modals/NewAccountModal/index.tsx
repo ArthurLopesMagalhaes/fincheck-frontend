@@ -1,3 +1,4 @@
+import { ColorsDropdownInput } from "../../../../components/ColorsDropdownInput";
 import { Input } from "../../../../components/Input";
 import { InputCurrency } from "../../../../components/inputCurrency";
 import { Modal } from "../../../../components/Modal";
@@ -31,6 +32,7 @@ export function NewAccountModal() {
         <div className="mt-10 flex flex-col gap-4">
           <Input type="text" name="name" placeholder="Nome da Conta" />
           <Select placeholder="Tipo" options={options} />
+          <ColorsDropdownInput />
         </div>
       </form>
     </Modal>

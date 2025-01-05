@@ -1,3 +1,4 @@
+// @ts-expect-error correct lib import
 import "swiper/css";
 
 import { PlusIcon } from "@radix-ui/react-icons";
