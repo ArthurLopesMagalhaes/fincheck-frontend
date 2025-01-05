@@ -27,7 +27,7 @@ export function Select({
   onChange,
   value,
 }: SelectProps) {
-  const [selectedValue, setSelectedValue] = useState(value ?? "");
+  const [selectedValue, setSelectedValue] = useState(value);
 
   function handleSelect(value: string) {
     setSelectedValue(value);
