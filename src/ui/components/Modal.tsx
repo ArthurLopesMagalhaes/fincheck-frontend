@@ -42,7 +42,13 @@ export function Modal({
               <Cross2Icon className="w-6 h-6" />
             </button>
 
-            <span className="text-lg tracking-[-1px] font-bold">{title}</span>
+            <RdxDialog.Title>
+              <RdxDialog.Description>
+                <span className="text-lg tracking-[-1px] font-bold">
+                  {title}
+                </span>
+              </RdxDialog.Description>
+            </RdxDialog.Title>
 
             <div className="w-12 h-12 flex items-center justify-center">
               {rightAction}
