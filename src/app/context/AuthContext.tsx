@@ -8,12 +8,14 @@ import {
 import { localStorageKeys } from "../config/localStorageKeys";
 import { useQuery } from "@tanstack/react-query";
 import { usersService } from "../services/usersService";
+import { User } from "../entities/User";
 
 interface AuthContextValue {
   signedIn: boolean;
   signin: (token: string) => void;
   signout: () => void;
   isFetching: boolean;
+  user: User | undefined;
 }
 
 export const AuthContext = createContext({} as AuthContextValue);
@@ -27,7 +29,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     return !!storedAccessToken;
   });
 
-  const { isError, isFetching, isSuccess } = useQuery({
+  const { isError, isFetching, isSuccess, data } = useQuery({
     queryKey: ["users", "me"],
     queryFn: () => usersService.me(),
     enabled: signedIn,
@@ -57,7 +59,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, [isError, signout]);
 
   return (
-    <AuthContext.Provider value={{ signedIn, signin, signout, isFetching }}>
+    <AuthContext.Provider
+      value={{ signedIn, signin, signout, isFetching, user: data }}
+    >
       {children}
     </AuthContext.Provider>
   );
