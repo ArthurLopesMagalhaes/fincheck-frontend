@@ -15,6 +15,7 @@ import { useTransactionsController } from "./useTransactionsController";
 import { Spinner } from "../../../../components/Components";
 import { TransactionTypeDropdown } from "./TransactionTypeDropdown";
 import { FiltersModal } from "./FiltersModal";
+import { EditTransactionModal } from "../../modals/EditTransactionModal ";
 
 export function Transactions() {
   const {
@@ -29,6 +30,9 @@ export function Transactions() {
     filters,
     handleApplyFilters,
     handleOpenEditModal,
+    isEditModalOpen,
+    handleCloseEditModal,
+    transactionBeingEdited,
   } = useTransactionsController();
 
   const hasTransactions = transactions.length > 0;
@@ -43,6 +47,13 @@ export function Transactions() {
 
       {!isInitialLoading && (
         <>
+          {transactionBeingEdited && (
+            <EditTransactionModal
+              open={isEditModalOpen}
+              onClose={handleCloseEditModal}
+              transaction={transactionBeingEdited}
+            />
+          )}
           <FiltersModal
             open={isFiltersModalOpen}
             onClose={handleCloseFiltersModal}
