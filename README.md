@@ -1,50 +1,57 @@
-# React + TypeScript + Vite
+# FINCHECK
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> O FINCHECK é uma aplicação para gerenciamento de Finanças pessoais. Monitore seus gastos de forma simples.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Login
+- Cadastro
+- Dashboard
+- Adicionar transação
+- Listar transações
+- Filtrar transações
+- Excluir transação
+- Atualizar transação
 
-## Expanding the ESLint configuration
+### Screenshots
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+<img src="https://github.com/user-attachments/assets/341383cf-efe4-4dbc-b7ff-c9d83a5ad492" width="500">
+<img src="https://github.com/user-attachments/assets/b81138e6-6457-4c19-99ca-ba608ffdf2e1" width="500">
+<img src="https://github.com/user-attachments/assets/93b6a8f1-b8aa-45c8-a97a-6f7959d618f4" width="500">
+<img src="https://github.com/user-attachments/assets/46e51dcb-7e03-443d-b649-ea7c87efeca9" width="500">
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### Technical Highlights
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- Autenticação com JWT
+- Validação de dados com Zod
+- Persistência de dados com Prisma
+- Manipulação de dados com React Query
+
+### Architecture patterns implemented
+
+- Clean Architecture
+- Repository Pattern
+
+## 👩‍💻 Tecnologias usadas
+  
+### Back-end
+  * NestJS
+  * Typescript
+  * PostgreSQL
+  * Prisma
+  * Docker
+  * JWT
+
+### Front-end Web
+
+  * React / Vite 
+  * Typescript
+  * TailwindCSS
+  * Zod
+  * React Query
+  
+
+
