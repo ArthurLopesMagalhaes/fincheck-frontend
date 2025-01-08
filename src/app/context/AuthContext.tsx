@@ -35,16 +35,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     enabled: signedIn,
   });
 
-  const signin = useCallback(
-    (token: string) => {
-      localStorage.setItem(localStorageKeys.ACCESS_TOKEN, token);
+  const signin = useCallback((token: string) => {
+    localStorage.setItem(localStorageKeys.ACCESS_TOKEN, token);
 
-      if (isSuccess) {
-        setSignedIn(true);
-      }
-    },
-    [isSuccess]
-  );
+    setSignedIn(true);
+  }, []);
 
   const signout = useCallback(() => {
     localStorage.removeItem(localStorageKeys.ACCESS_TOKEN);
@@ -60,7 +55,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   return (
     <AuthContext.Provider
-      value={{ signedIn, signin, signout, isFetching, user: data }}
+      value={{
+        signedIn: isSuccess && signedIn,
+        signin,
+        signout,
+        isFetching,
+        user: data,
+      }}
     >
       {children}
     </AuthContext.Provider>
