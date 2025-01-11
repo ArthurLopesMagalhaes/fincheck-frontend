@@ -6,8 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "ci:lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test:ci": "echo 'No tests yet'"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",
