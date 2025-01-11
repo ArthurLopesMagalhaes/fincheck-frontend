@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { createContext, useCallback, useState } from "react";
 import { BankAccount } from "../../../../app/entities/BankAccount";
 
