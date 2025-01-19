@@ -35,7 +35,7 @@
 - Clean Architecture
 - Repository Pattern
 
-## 👩‍💻 Tecnologias usadas
+## Tecnologias usadas
   
 ### Back-end
   * NestJS
